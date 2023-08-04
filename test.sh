@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ls /data/bundle
+aws s3 ls s3://bcovresources/ --recursive --human-readable --summarize
 
 # if [ -z "${BATCH_S3_URL}" ]; then
 #     echo "BATCH_S3_URL not set."
