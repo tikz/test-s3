@@ -2,6 +2,8 @@
 
 echo "mounted volumes"
 df -h
+echo "devices"
+lsblk
 echo "done"
 
 # if [ -z "${BATCH_S3_URL}" ]; then
