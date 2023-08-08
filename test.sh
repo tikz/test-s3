@@ -5,6 +5,7 @@ df -h
 echo "devices"
 lsblk
 echo "done"
+cat /data22/output.txt
 
 # if [ -z "${BATCH_S3_URL}" ]; then
 #     echo "BATCH_S3_URL not set."
