@@ -1,15 +1,14 @@
 #!/bin/bash
 
-echo "mounted volumes"
-df -h
-echo "devices"
-lsblk
-echo "done"
-ls /data
+print_ram_usage() {
+    while true; do
+        ram_usage=$(free -h | awk '/^Mem:/ { printf("RAM: %s / %s", $3, $2); }')
+        echo "$ram_usage"
+        sleep 3
+    done
+}
 
+print_ram_usage &
 
-# if [ -z "${BATCH_S3_URL}" ]; then
-#     echo "BATCH_S3_URL not set."
-# fi
-
-# aws s3 ls "${BATCH_S3_URL}"
+echo "run stressmem"
+python3 /stressmem.py
